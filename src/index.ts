@@ -1,6 +1,7 @@
 import { join } from 'path'
 
 import fastifyAutoload from '@fastify/autoload';
+import fastifyRateLimit from '@fastify/rate-limit';
 import fastify from 'fastify'
 import fastifyGracefulShutdown from 'fastify-graceful-shutdown';
 import fastifyHealthcheck from 'fastify-healthcheck';
@@ -15,6 +16,11 @@ const server = fastify({
 
 void server.register(fastifyAutoload, {
     dir: join(__dirname, 'routes'),
+});
+
+void server.register(fastifyRateLimit, {
+    max: 100,
+    timeWindow: '1 minute',
 });
 
 void server.register(fastifyGracefulShutdown);
