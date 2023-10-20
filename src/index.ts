@@ -6,7 +6,9 @@ import fastifyAutoload from '@fastify/autoload';
 import fastifyGracefulShutdown from 'fastify-graceful-shutdown';
 
 const server = fastify({
-    logger: !PRODUCTION,
+    logger: {
+        level: PRODUCTION ? 'info' : 'debug',
+    },
 });
 
 void server.register(fastifyAutoload, {
@@ -24,7 +26,7 @@ server.listen({ port: 8080, host: HOST }, (err, address) => {
 });
 
 server.after(() => {
-    server.gracefulShutdown((signal, next) => {
+    server.gracefulShutdown((_signal, next) => {
         console.log('Shutting down.');
         next();
     });
