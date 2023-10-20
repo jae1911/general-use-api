@@ -1,6 +1,5 @@
 import { FastifyPluginCallback } from 'fastify';
 import { textToRainbow } from '../utils/textUtils';
-import qs from 'qs';
 import { ColourQuery } from '../types/colourQuery';
 
 const plugin: FastifyPluginCallback = (fastify, opts, next): void => {
