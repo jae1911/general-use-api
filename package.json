@@ -11,6 +11,7 @@
     "@indot/rainbowvis": "^1.0.2",
     "dotenv": "^16.3.1",
     "fastify": "^4.24.3",
+    "fastify-graceful-shutdown": "^3.5.1",
     "typescript": "^5.2.2"
   },
   "devDependencies": {
