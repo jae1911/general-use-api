@@ -28,7 +28,7 @@
   resolved "https://registry.npmjs.org/@fastify/deepmerge/-/deepmerge-1.3.0.tgz"
   integrity sha512-J8TOSBq3SoZbDhM9+R/u77hP93gz/rajSA+K2kGyijPpORPWUXHUpTaleoj+92As0S9uPRP7Oi8IqMf0u+ro6A==
 
-"@fastify/error@^3.4.0":
+"@fastify/error@^3.0.0", "@fastify/error@^3.4.0":
   version "3.4.0"
   resolved "https://registry.npmjs.org/@fastify/error/-/error-3.4.0.tgz"
   integrity sha512-e/mafFwbK3MNqxUcFBLgHhgxsF8UT1m8aj0dAlqEa2nJEgPsRtpHTZ3ObgrgkZ2M1eJHPTwgyUl/tXkvabsZdQ==
@@ -39,6 +39,14 @@
   integrity sha512-aZAXGYo6m22Fk1zZzEUKBvut/CIIQe/BapEORnxiD5Qr0kPHqqI69NtEMCme74h+at72sPhbkb4ZrLd1W3KRLA==
   dependencies:
     fast-json-stringify "^5.7.0"
+
+"@fastify/under-pressure@^8.2.0":
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/@fastify/under-pressure/-/under-pressure-8.3.0.tgz#9ef952c09a605e117489813a92b00d1352ca7738"
+  integrity sha512-ap1EePB9vHm8uQLM0nnaOeIMBLooNmAMTnccavBRwaXmu+acJFuSEQRVdMGRkW6viFDhdo5RGTcHzMBQyrucEA==
+  dependencies:
+    "@fastify/error" "^3.0.0"
+    fastify-plugin "^4.0.0"
 
 "@indot/rainbowvis@^1.0.2":
   version "1.0.2"
@@ -320,7 +328,14 @@ fastify-graceful-shutdown@^3.5.1:
     fastify-plugin "^4.5.1"
     fastparallel "^2.4.1"
 
-fastify-plugin@^4.5.1:
+fastify-healthcheck@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/fastify-healthcheck/-/fastify-healthcheck-4.4.0.tgz#f5550b9af13913369aa7e0da03cf303a743ffe06"
+  integrity sha512-goP2YYBp+inqrEFixZDxsoxFN8h219ZOzCFv1sMpleaxwbo5CmoLrVzrja6vCMa1LNx6aEvOcGaqLX5Oev1q/A==
+  dependencies:
+    "@fastify/under-pressure" "^8.2.0"
+
+fastify-plugin@^4.0.0, fastify-plugin@^4.5.1:
   version "4.5.1"
   resolved "https://registry.yarnpkg.com/fastify-plugin/-/fastify-plugin-4.5.1.tgz#44dc6a3cc2cce0988bc09e13f160120bbd91dbee"
   integrity sha512-stRHYGeuqpEZTL1Ef0Ovr2ltazUT9g844X5z/zEBFLG8RYlpDiOCIG+ATvYEp+/zmc7sN29mcIMp8gvYplYPIQ==

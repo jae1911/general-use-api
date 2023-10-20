@@ -12,4 +12,6 @@ COPY --from=builder /app/build /app/build
 
 EXPOSE 8080
 
+HEALTHCHECK CMD curl --fail http://localhost:8080/health || exit 1
+
 CMD ["node", "/app/build/index.js"]

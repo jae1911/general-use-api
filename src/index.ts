@@ -1,9 +1,10 @@
 import fastify from 'fastify'
+import fastifyAutoload from '@fastify/autoload';
+import fastifyGracefulShutdown from 'fastify-graceful-shutdown';
+import fastifyHealthcheck from 'fastify-healthcheck';
 
 import { join } from 'path'
 import { HOST, PRODUCTION } from './environment';
-import fastifyAutoload from '@fastify/autoload';
-import fastifyGracefulShutdown from 'fastify-graceful-shutdown';
 
 const server = fastify({
     logger: {
@@ -16,6 +17,7 @@ void server.register(fastifyAutoload, {
 });
 
 void server.register(fastifyGracefulShutdown);
+void server.register(fastifyHealthcheck);
 
 server.listen({ port: 8080, host: HOST }, (err, address) => {
     if(err) {

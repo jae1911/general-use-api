@@ -12,6 +12,7 @@
     "dotenv": "^16.3.1",
     "fastify": "^4.24.3",
     "fastify-graceful-shutdown": "^3.5.1",
+    "fastify-healthcheck": "^4.4.0",
     "typescript": "^5.2.2"
   },
   "devDependencies": {
