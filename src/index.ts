@@ -7,7 +7,7 @@ import fastifyGracefulShutdown from 'fastify-graceful-shutdown';
 
 const server = fastify({
     logger: {
-        level: PRODUCTION ? 'info' : 'debug',
+        level: PRODUCTION ? 'fatal' : 'debug',
     },
 });
 
