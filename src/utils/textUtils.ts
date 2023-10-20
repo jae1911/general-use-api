@@ -10,6 +10,6 @@ export const textToRainbow = (text: string, baseColour: string, endColour: strin
     return text.split('').map((char, index): string => {
         const hexColour = rainbow.colorAt(index);
 
-        return `<color=#${hexColour}>${text.charAt(index)}</color>`;
+        return `<color=#${hexColour}>${char}</color>`;
     }).join('');
 }
