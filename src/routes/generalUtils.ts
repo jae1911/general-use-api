@@ -1,6 +1,7 @@
 import { FastifyPluginCallback } from 'fastify';
-import { textToRainbow } from '../utils/textUtils';
+
 import { ColourQuery } from '../types/colourQuery';
+import { textToRainbow } from '../utils/textUtils';
 
 const plugin: FastifyPluginCallback = (fastify, opts, next): void => {
     fastify.get('/utils/colour', async (req, res) => {
@@ -9,7 +10,7 @@ const plugin: FastifyPluginCallback = (fastify, opts, next): void => {
         if (!query.text || !query.startColour || !query.endColour)
             await res.send('error; check parameters');
 
-        const colouredText = textToRainbow(query.text as string, query.startColour as string, query.endColour as string);
+        const colouredText = textToRainbow(query.text, query.startColour, query.endColour);
 
         await res.send(colouredText);
     });    

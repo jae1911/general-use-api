@@ -1,9 +1,10 @@
-import fastify from 'fastify'
+import { join } from 'path'
+
 import fastifyAutoload from '@fastify/autoload';
+import fastify from 'fastify'
 import fastifyGracefulShutdown from 'fastify-graceful-shutdown';
 import fastifyHealthcheck from 'fastify-healthcheck';
 
-import { join } from 'path'
 import { HOST, PRODUCTION } from './environment';
 
 const server = fastify({
@@ -24,12 +25,12 @@ server.listen({ port: 8080, host: HOST }, (err, address) => {
         console.error(err);
         process.exit(1);
     }
-    console.log(`Server is listening on ${address}`);
+    server.log.fatal(`Server is listening on ${address}`);
 });
 
 server.after(() => {
     server.gracefulShutdown((_signal, next) => {
-        console.log('Shutting down.');
+        server.log.fatal('Shutting down.');
         next();
     });
 });
