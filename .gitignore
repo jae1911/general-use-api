@@ -1,0 +1,11 @@
+bin/
+out/
+*.o
+*.bin
+*.db
+*.md
+lib/
+node_modules/
+.env
+build/
+*.log
