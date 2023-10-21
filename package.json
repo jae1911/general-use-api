@@ -5,7 +5,7 @@
   "main": "src/index.ts",
   "repository": "git@github.com:jae1911/general-use-api.git",
   "author": "Jae Lo Presti (j4) <git@777.tf>",
-  "license": "MIT",
+  "license": "GPL-3.0-or-later",
   "dependencies": {
     "@fastify/autoload": "^5.8.0",
     "@fastify/rate-limit": "^8.0.3",
