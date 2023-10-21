@@ -15,13 +15,13 @@ export const textToRainbow = (text: string, baseColour: string, endColour: strin
     }).join('');
 }
 
-export const textToAscii = (text: string, font: string): string => {
+export const textToAscii = (text: string, font: string, width = 80): string => {
     try {
         return figlet.textSync(text, {
             font: font as figlet.Fonts,
             horizontalLayout: "default",
             verticalLayout: "default",
-            width: 80,
+            width,
             whitespaceBreak: true,
         });
     } catch (_e) {

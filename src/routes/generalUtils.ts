@@ -22,7 +22,7 @@ const plugin: FastifyPluginCallback = (fastify, opts, next): void => {
         if (!query.text || !query.font)
             await res.send('error; check parameters').code(400);
 
-        await res.send(textToAscii(query.text, query.font));
+        await res.send(textToAscii(query.text, query.font, query.width));
     });
 
     fastify.get('/utils/ascii/fonts', async (_req, res) => {
