@@ -10,10 +10,12 @@
     "@fastify/autoload": "^5.8.0",
     "@fastify/rate-limit": "^8.0.3",
     "@indot/rainbowvis": "^1.0.2",
+    "@types/figlet": "^1.5.7",
     "dotenv": "^16.3.1",
     "fastify": "^4.24.3",
     "fastify-graceful-shutdown": "^3.5.1",
     "fastify-healthcheck": "^4.4.0",
+    "figlet": "^1.6.0",
     "typescript": "^5.2.2"
   },
   "devDependencies": {
